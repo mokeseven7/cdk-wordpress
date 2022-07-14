@@ -1,0 +1,19 @@
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+coverage
+test-reports
+.env
+.env.*
+.npmrc
+bin
+cdk.context.json
+cdk.json
+deploy.sh
+.vscode
+lib/

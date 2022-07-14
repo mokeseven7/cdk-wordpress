@@ -1,0 +1,69 @@
+name: Node Package CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+            - run: npm ci
+            - run: npm run build
+            - run: npm run test
+            - name: Publish Unit Test Results
+              uses: EnricoMi/publish-unit-test-result-action@v1
+              if: always()
+              with:
+                  files: test-reports/**/*.xml
+
+    package:
+        needs: [build]
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js 14.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 16.x
+
+            - run: npm ci
+            - run: npm run build
+            - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
+            - run: npm pack
+            - name: Upload
+              uses: actions/upload-artifact@v2
+              with:
+                  name: package
+                  path: "*.tgz"
+
+    publish:
+        needs: [package, build]
+        runs-on: ubuntu-18.04
+        permissions:
+            contents: read
+            packages: write
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Create .npmrc file
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "16.x"
+                  registry-url: "https://npm.pkg.github.com"
+                  # Defaults to the user or organization that owns the workflow file
+                  scope: "<scope>"
+            - name: Publish To Github Packages
+              run: |
+                  npm ci
+                  npm run build
+                  npm publish
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

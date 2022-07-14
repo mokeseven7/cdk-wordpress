@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="5" failures="5" errors="0" time="8.688">
+  <testsuite name="Resources Should Be Created" errors="0" failures="5" skipped="0" timestamp="2021-12-14T13:10:28" time="8.571" tests="5">
+    <testcase classname="Resources Should Be Created Should Create A VPC Resource" name="Resources Should Be Created Should Create A VPC Resource" time="0.053">
+      <failure>Error: Host port (80) must be left out or equal to container port 9000 for network mode awsvpc
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:292:17
+    at Array.map (&lt;anonymous&gt;)
+    at ContainerDefinition.addPortMappings (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:289:44)
+    at new ContainerDefinition (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:243:12)
+    at FargateTaskDefinition.addContainer (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.ts:372:12)
+    at new ServerlessWordpress (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/index.ts:95:42)
+    at new IntegTesting (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/integ.default.ts:17:21)
+    at Object.&lt;anonymous&gt; (/Users/mikemcgrath/Cdk/constructs/serverless-database/test/serverless-wordpress.test.ts:7:27)
+    at Object.asyncJestTest (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/queueRunner.js:45:12</failure>
+    </testcase>
+    <testcase classname="Resources Should Be Created Should Create A Serverless RDS Cluster" name="Resources Should Be Created Should Create A Serverless RDS Cluster" time="0.014">
+      <failure>Error: Host port (80) must be left out or equal to container port 9000 for network mode awsvpc
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:292:17
+    at Array.map (&lt;anonymous&gt;)
+    at ContainerDefinition.addPortMappings (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:289:44)
+    at new ContainerDefinition (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:243:12)
+    at FargateTaskDefinition.addContainer (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.ts:372:12)
+    at new ServerlessWordpress (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/index.ts:95:42)
+    at new IntegTesting (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/integ.default.ts:17:21)
+    at Object.&lt;anonymous&gt; (/Users/mikemcgrath/Cdk/constructs/serverless-database/test/serverless-wordpress.test.ts:12:27)
+    at Object.asyncJestTest (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/queueRunner.js:45:12</failure>
+    </testcase>
+    <testcase classname="Resources Should Be Created Should Create An ECS Cluster" name="Resources Should Be Created Should Create An ECS Cluster" time="0.013">
+      <failure>Error: Host port (80) must be left out or equal to container port 9000 for network mode awsvpc
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:292:17
+    at Array.map (&lt;anonymous&gt;)
+    at ContainerDefinition.addPortMappings (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:289:44)
+    at new ContainerDefinition (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:243:12)
+    at FargateTaskDefinition.addContainer (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.ts:372:12)
+    at new ServerlessWordpress (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/index.ts:95:42)
+    at new IntegTesting (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/integ.default.ts:17:21)
+    at Object.&lt;anonymous&gt; (/Users/mikemcgrath/Cdk/constructs/serverless-database/test/serverless-wordpress.test.ts:17:27)
+    at Object.asyncJestTest (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/queueRunner.js:45:12</failure>
+    </testcase>
+    <testcase classname="Resources Should Be Created Should Create An ECS Service" name="Resources Should Be Created Should Create An ECS Service" time="0.011">
+      <failure>Error: Host port (80) must be left out or equal to container port 9000 for network mode awsvpc
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:292:17
+    at Array.map (&lt;anonymous&gt;)
+    at ContainerDefinition.addPortMappings (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:289:44)
+    at new ContainerDefinition (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:243:12)
+    at FargateTaskDefinition.addContainer (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.ts:372:12)
+    at new ServerlessWordpress (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/index.ts:95:42)
+    at new IntegTesting (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/integ.default.ts:17:21)
+    at Object.&lt;anonymous&gt; (/Users/mikemcgrath/Cdk/constructs/serverless-database/test/serverless-wordpress.test.ts:22:27)
+    at Object.asyncJestTest (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/queueRunner.js:45:12</failure>
+    </testcase>
+    <testcase classname="Resources Should Be Created Should Create An EFS Mount" name="Resources Should Be Created Should Create An EFS Mount" time="0.012">
+      <failure>Error: Host port (80) must be left out or equal to container port 9000 for network mode awsvpc
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:292:17
+    at Array.map (&lt;anonymous&gt;)
+    at ContainerDefinition.addPortMappings (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:289:44)
+    at new ContainerDefinition (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/container-definition.ts:243:12)
+    at FargateTaskDefinition.addContainer (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/aws-cdk-lib/aws-ecs/lib/base/task-definition.ts:372:12)
+    at new ServerlessWordpress (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/index.ts:95:42)
+    at new IntegTesting (/Users/mikemcgrath/Cdk/constructs/serverless-database/src/integ.default.ts:17:21)
+    at Object.&lt;anonymous&gt; (/Users/mikemcgrath/Cdk/constructs/serverless-database/test/serverless-wordpress.test.ts:27:27)
+    at Object.asyncJestTest (/Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:106:37)
+    at /Users/mikemcgrath/Cdk/constructs/serverless-database/node_modules/jest-jasmine2/build/queueRunner.js:45:12</failure>
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,17 @@
+#General
+*.ts
+!*.d.ts
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+#Testing
+coverage
+test-reports
+
+#Config
+.vscode
+
+#Not Sure If Using
+docker
