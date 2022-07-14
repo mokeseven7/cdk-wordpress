@@ -15,7 +15,7 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: 16.x
-            - run: npm ci
+            - run: npm install
             - run: npm run build
             - run: npm run test
             - name: Publish Unit Test Results
@@ -29,12 +29,12 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - uses: actions/checkout@v2
-            - name: Use Node.js 14.x
+            - name: Use Node.js 16
               uses: actions/setup-node@v1
               with:
                   node-version: 16.x
 
-            - run: npm ci
+            - run: npm install
             - run: npm run build
             - run: npm version prerelease --preid=ci-$GITHUB_RUN_ID --no-git-tag-version
             - run: npm pack
@@ -59,10 +59,10 @@ jobs:
                   node-version: "16.x"
                   registry-url: "https://npm.pkg.github.com"
                   # Defaults to the user or organization that owns the workflow file
-                  scope: "<scope>"
+                  scope: "@mikemcgrath"
             - name: Publish To Github Packages
               run: |
-                  npm ci
+                  npm install
                   npm run build
                   npm publish
               env:
